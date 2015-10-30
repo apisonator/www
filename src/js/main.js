@@ -48,14 +48,16 @@
 
   // dynamics.setTimeout(intro, 500);
 
-  const $tutorial1 = $('.tutorial');
+  const $tutorial = $('.tutorial');
+  const $tutorial1 = $('.tutorial-part--one');
   const $tutorial2 = $('.tutorial-part--two');
-
+  const $tutorial3 = $('.tutorial-part--three');
 
   const $terminal1 = $tutorial1.find('.terminal-line');
   const $terminal2 = $tutorial2.find('.terminal-line');
+  const $terminal3 = $tutorial3.find('.terminal-line');
 
-  $tutorial1.waypoint({
+  $tutorial.waypoint({
     handler: () => {
       $terminal1.typed({
         strings: [ $terminal1.data('text') ],
@@ -63,6 +65,26 @@
         startDelay: 100,
         callback: () => {
           const $resp = $tutorial1.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+
+      $terminal2.typed({
+        strings: [ $terminal2.data('text') ],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: () => {
+          const $resp = $tutorial2.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+
+      $terminal3.typed({
+        strings: [ $terminal3.data('text') ],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: () => {
+          const $resp = $tutorial3.find('.terminal-response');
           $resp.addClass('is-visible');
         }
       });

@@ -686,13 +686,16 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
   // dynamics.setTimeout(intro, 500);
 
-  var $tutorial1 = $('.tutorial');
+  var $tutorial = $('.tutorial');
+  var $tutorial1 = $('.tutorial-part--one');
   var $tutorial2 = $('.tutorial-part--two');
+  var $tutorial3 = $('.tutorial-part--three');
 
   var $terminal1 = $tutorial1.find('.terminal-line');
   var $terminal2 = $tutorial2.find('.terminal-line');
+  var $terminal3 = $tutorial3.find('.terminal-line');
 
-  $tutorial1.waypoint({
+  $tutorial.waypoint({
     handler: function handler() {
       $terminal1.typed({
         strings: [$terminal1.data('text')],
@@ -700,6 +703,26 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
         startDelay: 100,
         callback: function callback() {
           var $resp = $tutorial1.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+
+      $terminal2.typed({
+        strings: [$terminal2.data('text')],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: function callback() {
+          var $resp = $tutorial2.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+
+      $terminal3.typed({
+        strings: [$terminal3.data('text')],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: function callback() {
+          var $resp = $tutorial3.find('.terminal-response');
           $resp.addClass('is-visible');
         }
       });
