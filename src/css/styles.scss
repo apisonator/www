@@ -1,0 +1,167 @@
+html, body {
+  height: 100%;
+  font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #273335;
+}
+
+.u-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+/**
+ * hero section
+ */
+
+.hero {
+  background-color: #273335;
+  min-height: 500px;
+  color: #e7edf1;
+}
+
+.hero-wrapper {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/**
+ * tutorial
+ */
+
+.tutorial {
+  background-color: #e7edf1;
+  min-height: 500px;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  margin-bottom: 3rem;
+}
+
+.tutorial-part-title {
+  margin: 2rem 0;
+  color: #FF6D38;
+}
+
+/**
+ * terminal
+ */
+
+.terminal {
+  min-height: 300px;
+}
+
+.terminal-header {
+  font-weight: 700;
+  min-height: 2rem;
+  line-height: 2rem;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  color: #273335;
+  background-color: #909090;
+}
+
+.terminal-window {
+  color: #e7edf1;
+  border-radius: 0 0 4px 4px;
+  background-color: #273335;
+  min-height: 300px;
+}
+
+.terminal-window-content {
+  padding: 1rem;
+}
+
+/**
+ * footer section
+ */
+
+footer {
+  color: #e7edf1;
+  text-align: center;
+  font-weight: 400;
+  padding: 3rem 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #e7edf1;
+
+  &:hover {
+    border-bottom: 1px dotted #e7edf1;
+  }
+}
+
+/*
+ * typewriting
+ */
+
+.typed-cursor{
+    padding-left: 0.2rem;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+.hero .typed-cursor {
+  font-size: 1.5rem;
+}
+
+.tutorial .typed-cursor {
+  font-size: 1rem;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+// not used
+
+// .box {
+//   position: relative;
+//   height: 600px;
+//   width: 600px;
+//   overflow: visible;
+//   display: block;
+//   margin: 0 auto;
+// }
+//
+// svg {
+//   display: block;
+//   overflow: visible;
+// }
+//
+// .grey-dot {
+//   fill: #fff;
+// }
+//
+// circle {
+//   opacity: 0;
+// }
+
