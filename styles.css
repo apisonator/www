@@ -17,7 +17,8 @@ body {
 .hero {
   background-color: #273335;
   min-height: 500px;
-  color: #e7edf1; }
+  color: #e7edf1;
+  position: relative; }
 
 .hero-wrapper {
   text-align: center; }
@@ -29,6 +30,31 @@ body {
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 400; }
+
+.hero-button {
+  position: absolute;
+  color: #e7edf1;
+  width: 220px;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 300;
+  bottom: 4rem;
+  margin-left: -110px;
+  background: transparent;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 109, 56, 0);
+  border: 1px solid transparent;
+  background-color: #BA5029;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; }
+  .hero-button:hover {
+    background-color: #FF6D38;
+    border: 1px solid #ff6d38;
+    box-shadow: 0 0 0 4px rgba(255, 109, 56, 0.4); }
 
 /**
  * tutorial
@@ -48,7 +74,7 @@ body {
  * terminal
  */
 .terminal {
-  min-height: 300px; }
+  min-height: 200px; }
 
 .terminal-header {
   font-weight: 700;
@@ -63,10 +89,25 @@ body {
   color: #e7edf1;
   border-radius: 0 0 4px 4px;
   background-color: #273335;
-  min-height: 300px; }
+  min-height: 200px; }
 
 .terminal-window-content {
   padding: 1rem; }
+
+.terminal-response {
+  opacity: 0;
+  margin-top: 0.5rem;
+  -webkit-transition: opacity .3s ease .3s;
+          transition: opacity .3s ease .3s;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 0.875rem; }
+
+.terminal-response.is-visible {
+  opacity: 0.9; }
+
+.terminal-response p {
+  margin: 0 0.875rem; }
 
 /**
  * footer section

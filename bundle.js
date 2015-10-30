@@ -686,19 +686,31 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
   // dynamics.setTimeout(intro, 500);
 
-  var firstTerminal = function firstTerminal() {
-    var $terminal = $('.tutorial-part--one .terminal-line');
-    $terminal.typed({
-      strings: [$terminal.data('text')],
-      typeSpeed: 30,
-      startDelay: 100
-    });
-  };
+  var $tutorial1 = $('.tutorial');
+  var $tutorial2 = $('.tutorial-part--two');
+
+  var $terminal1 = $tutorial1.find('.terminal-line');
+  var $terminal2 = $tutorial2.find('.terminal-line');
+
+  $tutorial1.waypoint({
+    handler: function handler() {
+      $terminal1.typed({
+        strings: [$terminal1.data('text')],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: function callback() {
+          var $resp = $tutorial1.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+    }
+  });
+
+  var initTerminals = function initTerminals() {};
 
   var $subtitle = $('.hero-subtitle');
   $subtitle.typed({
     strings: [$subtitle.data('text')],
-    typeSpeed: 30,
-    callback: firstTerminal
+    typeSpeed: 30
   });
 })();

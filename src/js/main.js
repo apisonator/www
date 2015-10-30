@@ -48,25 +48,35 @@
 
   // dynamics.setTimeout(intro, 500);
 
-  const firstTerminal = () => {
-    const $terminal = $('.tutorial-part--one .terminal-line');
-    $terminal.typed({
-      strings: [ $terminal.data('text') ],
-      typeSpeed: 30,
-      startDelay: 100
-    });
-  }
+  const $tutorial1 = $('.tutorial');
+  const $tutorial2 = $('.tutorial-part--two');
+
+
+  const $terminal1 = $tutorial1.find('.terminal-line');
+  const $terminal2 = $tutorial2.find('.terminal-line');
+
+  $tutorial1.waypoint({
+    handler: () => {
+      $terminal1.typed({
+        strings: [ $terminal1.data('text') ],
+        typeSpeed: 30,
+        startDelay: 100,
+        callback: () => {
+          const $resp = $tutorial1.find('.terminal-response');
+          $resp.addClass('is-visible');
+        }
+      });
+    }
+  });
+
+  const initTerminals = () => {
+
+  };
 
   const $subtitle = $('.hero-subtitle');
   $subtitle.typed({
     strings: [ $subtitle.data('text') ],
     typeSpeed: 30,
-    callback: firstTerminal
   });
-
-
-
-
-
 
 })();
