@@ -1,4 +1,4 @@
-(function () {
+(() => {
   // let circles = document.querySelectorAll('circle');
   // let inner = document.querySelector('.inner');
   // let box = document.querySelector('.box');
@@ -49,56 +49,32 @@
   // dynamics.setTimeout(intro, 500);
 
   const $tutorial = $('.tutorial');
-  const $tutorial1 = $('.tutorial-part--one');
-  const $tutorial2 = $('.tutorial-part--two');
-  const $tutorial3 = $('.tutorial-part--three');
+  const $tutorialParts = $('.tutorial-part');
+  const $subtitle = $('.hero-subtitle');
 
-  const $terminal1 = $tutorial1.find('.terminal-line');
-  const $terminal2 = $tutorial2.find('.terminal-line');
-  const $terminal3 = $tutorial3.find('.terminal-line');
-
-  $tutorial.waypoint({
-    handler: () => {
-      $terminal1.typed({
-        strings: [ $terminal1.data('text') ],
-        typeSpeed: 30,
-        startDelay: 100,
-        callback: () => {
-          const $resp = $tutorial1.find('.terminal-response');
-          $resp.addClass('is-visible');
-        }
-      });
-
-      $terminal2.typed({
-        strings: [ $terminal2.data('text') ],
-        typeSpeed: 30,
-        startDelay: 100,
-        callback: () => {
-          const $resp = $tutorial2.find('.terminal-response');
-          $resp.addClass('is-visible');
-        }
-      });
-
-      $terminal3.typed({
-        strings: [ $terminal3.data('text') ],
-        typeSpeed: 30,
-        startDelay: 100,
-        callback: () => {
-          const $resp = $tutorial3.find('.terminal-response');
-          $resp.addClass('is-visible');
-        }
-      });
-    }
-  });
-
-  const initTerminals = () => {
-
+  const initResponse = (tutorialPart) => {
+    const $resp = $(tutorialPart).find('.terminal-response');
+    $resp.addClass('is-visible');
   };
 
-  const $subtitle = $('.hero-subtitle');
+  const initTerminals = () => {
+    $tutorialParts.each((idx, part) => {
+      $terminal = $(part).find('.terminal-line');
+      $terminal.typed({
+        strings: [ $terminal.data('text') ],
+        typeSpeed: 30,
+        startDelay: 100 + 1500*idx,
+        callback: initResponse.bind(null, part)
+      });
+    });
+  };
+
+  // start
+
   $subtitle.typed({
     strings: [ $subtitle.data('text') ],
     typeSpeed: 30,
   });
+  $tutorial.waypoint({ handler: initTerminals });
 
 })();
