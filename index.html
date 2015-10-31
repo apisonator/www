@@ -2,84 +2,11 @@
 <html>
 <head>
   <title>Apisonator</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,900,700,300,700italic,100,100italic,300italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <section class="hero">
-    <div class="u-wrapper hero-wrapper">
-      <h1 class="hero-title">APISONATOR</h1>
-      <div>
-        <span class="hero-subtitle" data-text="Secure, Manage and Extend your APIs and Microservices. ^600 Serverless."></span>
-      </div>
-      <button class="hero-button">Get it now</button>
-    </div>
-  </section>
-  <section class="tutorial">
 
-    <div class="u-wrapper tutorial-wrapper">
-      <article class="tutorial-part tutorial-part--one">
-        <h2 class="tutorial-part-title">01. Register through the CLI</h2>
-        <div class="terminal">
-          <header class="terminal-header">Terminal</header>
-          <div class="terminal-window">
-            <div class="terminal-window-content">
-              <span class="terminal-line" data-text="> apisonator-cli register me@3scale.net MySecretPassword"></span>
-              <div class="terminal-response">
-                <p>   Registered correctly. Logged!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="u-wrapper tutorial-wrapper">
-      <article class="tutorial-part tutorial-part--two">
-        <h2 class="tutorial-part-title">02. Create your API</h2>
-        <div class="terminal">
-          <header class="terminal-header">Terminal</header>
-          <div class="terminal-window">
-            <div class="terminal-window-content">
-              <span class="terminal-line" data-text="> apisonator-cli create foo http://echo-api.3scale.net/"></span>
-              <div class="terminal-response">
-                <p>   Your apisonator endpoint: http://cacafuti1001.apisonator.io -> http://echo-api.3scale.net/</p>
-                <p>   Bootstrap directory created at: ./apisonator-foo</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="u-wrapper tutorial-wrapper">
-      <article class="tutorial-part tutorial-part--three">
-        <h2 class="tutorial-part-title">03. Deploy</h2>
-        <div class="terminal">
-          <header class="terminal-header">Terminal</header>
-          <div class="terminal-window">
-            <div class="terminal-window-content">
-              <span class="terminal-line" data-text="> apisonator-cli deploy"></span>
-              <div class="terminal-response">
-                <p>  Starting deploy</p>
-                <p>  Updated configuration for: http://cacafuti1001.apisonator.io</p>
-                <p>   Bootstrap directory created at: ./apisonator-foo</p>
-                <p>   Deploying middlewares:</p>
-                <p>          - cors OK</p>
-                <p>          - middleware01 OK</p>
-                <p>          - middleware02 OK</p>
-                <p>   Correctly deployed.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-  <footer>
-    a thing by <a href="https://github.com/jmprusi">Joaquim</a>, <a href="https://github.com/ceritium">José el de Heré</a>, <a href="https://github.com/kidd">Rai</a> and <a href="https://github.com/vdel26">Victor</a>
-  </footer>
-<!--
   <div class="box">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <title>
@@ -143,7 +70,82 @@
         <circle class="grey-dot" id="grey-dot-1" cx="20.5" cy="65.5" r="2.5" fill="#505150"/>
       </g>
     </svg>
-  </div> -->
+  </div>
+
+  <section class="hero">
+    <div class="u-wrapper hero-wrapper">
+      <h1 class="hero-title">APISONATOR</h1>
+      <div>
+        <span class="hero-subtitle" data-text="Secure, Manage and Extend your APIs and Microservices. ^600 Serverless."></span>
+      </div>
+      <a class="hero-button" href="https://github.com/apisonator/api-proxy-openresty">Get it now</a>
+    </div>
+  </section>
+  <section class="tutorial">
+
+    <div class="u-wrapper tutorial-wrapper">
+      <article class="tutorial-part tutorial-part--one">
+        <h2 class="tutorial-part-title">01. Register through the CLI</h2>
+        <div class="terminal">
+          <header class="terminal-header">Terminal</header>
+          <div class="terminal-window">
+            <div class="terminal-window-content">
+              <span class="terminal-line" data-text="> apisonator-cli register me@3scale.net MySecretPassword"></span>
+              <div class="terminal-response">
+                <p>   Registered correctly. Logged!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="u-wrapper tutorial-wrapper">
+      <article class="tutorial-part tutorial-part--two">
+        <h2 class="tutorial-part-title">02. Create your API</h2>
+        <div class="terminal">
+          <header class="terminal-header">Terminal</header>
+          <div class="terminal-window">
+            <div class="terminal-window-content">
+              <span class="terminal-line" data-text="> apisonator-cli create foo http://echo-api.3scale.net/"></span>
+              <div class="terminal-response">
+                <p>   Your apisonator endpoint: http://echo12345.apisonator.io -> http://echo-api.3scale.net/</p>
+                <p>   Bootstrap directory created at: ./apisonator-foo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="u-wrapper tutorial-wrapper">
+      <article class="tutorial-part tutorial-part--three">
+        <h2 class="tutorial-part-title">03. Deploy</h2>
+        <div class="terminal">
+          <header class="terminal-header">Terminal</header>
+          <div class="terminal-window">
+            <div class="terminal-window-content">
+              <span class="terminal-line" data-text="> apisonator-cli deploy"></span>
+              <div class="terminal-response">
+                <p>  Starting deploy</p>
+                <p>  Updated configuration for: http://echo12345.apisonator.io</p>
+                <p>   Bootstrap directory created at: ./apisonator-foo</p>
+                <p>   Deploying middlewares:</p>
+                <p>          - cors OK</p>
+                <p>          - middleware01 OK</p>
+                <p>          - middleware02 OK</p>
+                <p>   Correctly deployed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    a project by <a href="https://github.com/jmprusi">Joaquim</a>, <a href="https://github.com/ceritium">Jose</a>, <a href="https://github.com/kidd">Rai</a> and <a href="https://github.com/vdel26">Victor</a>
+  </footer>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

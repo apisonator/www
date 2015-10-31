@@ -1,11 +1,21 @@
+$lightgrey: #e7edf1;
+$darkgrey: #273335;
+$orange: #ff6d38;
+
 html, body {
   height: 100%;
   font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #273335;
+  background-color: $darkgrey;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 .u-wrapper {
@@ -19,9 +29,9 @@ body {
  */
 
 .hero {
-  background-color: #273335;
+  background-color: $darkgrey;
   min-height: 500px;
-  color: #e7edf1;
+  color: $lightgrey;
   position: relative;
 }
 
@@ -41,38 +51,38 @@ body {
 
 .hero-button {
   position: absolute;
-  color: #e7edf1;
   width: 220px;
   height: 48px;
-  font-size: 1rem;
-  font-weight: 300;
   bottom: 4rem;
   margin-left: -110px;
-  background: transparent;
-  border-radius: 4px;
   outline: none;
   box-shadow: 0 0 0 4px rgba(255, 109, 56, 0);
   border: 1px solid transparent;
+  border-radius: 4px;
   background-color: #BA5029;
+  color: $lightgrey;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 46px;
+  letter-spacing: 0.1rem;
   cursor: pointer;
   transition: all .3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
 
   &:hover {
-    background-color: #FF6D38;
+    background-color: $orange;
     border: 1px solid rgba(255, 109, 56, 1);
     box-shadow: 0 0 0 4px rgba(255, 109, 56, 0.4);
   }
 }
-
 
 /**
  * tutorial
  */
 
 .tutorial {
-  background-color: #e7edf1;
+  background-color: $lightgrey;
   min-height: 500px;
   padding-top: 4rem;
   padding-bottom: 6rem;
@@ -81,7 +91,7 @@ body {
 
 .tutorial-part-title {
   margin: 2rem 0;
-  color: #FF6D38;
+  color: $orange;
 }
 
 /**
@@ -98,14 +108,14 @@ body {
   line-height: 2rem;
   border-radius: 4px 4px 0 0;
   text-align: center;
-  color: #273335;
+  color: $darkgrey;
   background-color: #909090;
 }
 
 .terminal-window {
-  color: #e7edf1;
+  color: $lightgrey;
   border-radius: 0 0 4px 4px;
-  background-color: #273335;
+  background-color: $darkgrey;
   min-height: 200px;
 }
 
@@ -135,7 +145,7 @@ body {
  */
 
 footer {
-  color: #e7edf1;
+  color: $lightgrey;
   text-align: center;
   font-weight: 400;
   padding: 3rem 0;
@@ -143,10 +153,10 @@ footer {
 
 footer a {
   text-decoration: none;
-  color: #e7edf1;
+  color: $lightgrey;
 
   &:hover {
-    border-bottom: 1px dotted #e7edf1;
+    border-bottom: 1px dotted $lightgrey;
   }
 }
 
@@ -170,44 +180,43 @@ footer a {
   font-size: 1rem;
 }
 
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
+@keyframes blink {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
 }
 
+/*
+ * intro scene
+ */
 
-// not used
+.box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  overflow: visible;
+  z-index: 2;
+  background-color: $darkgrey;
+  transition: all 1s ease;
+}
 
-// .box {
-//   position: relative;
-//   height: 600px;
-//   width: 600px;
-//   overflow: visible;
-//   display: block;
-//   margin: 0 auto;
-// }
-//
-// svg {
-//   display: block;
-//   overflow: visible;
-// }
-//
-// .grey-dot {
-//   fill: #fff;
-// }
-//
-// circle {
-//   opacity: 0;
-// }
+.box.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+.grey-dot {
+  fill: #fff;
+}
+
+circle {
+  opacity: 0;
+}
 
